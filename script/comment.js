@@ -23,16 +23,15 @@ export const comment_button = (id) => {
     console.log(movieid_comment)
     window.localStorage.setItem(`${id}_comment`, JSON.stringify(movieid_comment))
   }
-  movieid_comment = JSON.parse(window.localStorage.getItem(`${id}_comment`))
-  e.preventDefault();
-  show_comment()
+  show_details(id);
+  
 }
 
 export const show_comment = (id) => {
   let movieid_comment = JSON.parse(window.localStorage.getItem(`${id}_comment`))
   let temp_html = ``;
   movieid_comment.forEach((comment) => {
-    temp_html = temp_html + `<div class="comment">${comment['comment']} - ${comment['name']}</div>`
+    temp_html = temp_html + `<div class="comment">${comment['comment']} - ${comment['name']}님</div>`
   });
   document.querySelector('#movie-review').innerHTML = temp_html
 }

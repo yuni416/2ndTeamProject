@@ -45,16 +45,16 @@ export const show_details = (id) => {
       let movieid_comment = JSON.parse(window.localStorage.getItem(`${id}_comment`))
       if (movieid_comment) {
         movieid_comment.forEach((comment) => {
-          temp_html = temp_html + `<div class="comment">${comment['comment']} - ${comment['name']}</div>`
+          temp_html = temp_html + `<div class="comment">${comment['comment']} - ${comment['name']}님</div>`
         });
       }
 
-      temp_html = temp_html + `<form>
+      temp_html = temp_html + `<div>
                     <input id="comment-name" type="text" name="name" placeholder="닉네임">
                     <input id="comment-pwd" type="password" name="pwd" placeholder="비밀번호">
                     <textarea id="comment-body" placeholder="한 줄 평을 입력해 주세요"></textarea>
                     <button onclick="comment_button('${id}')">작성
-                  </form>
+                  </div>
                 </div>`;
       movie_list.innerHTML = temp_html;
     })
