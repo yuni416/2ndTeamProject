@@ -26,12 +26,3 @@ export const comment_button = (id) => {
   show_details(id);
   
 }
-
-export const show_comment = (id) => {
-  let movieid_comment = JSON.parse(window.localStorage.getItem(`${id}_comment`))
-  let temp_html = ``;
-  movieid_comment.forEach((comment) => {
-    temp_html = temp_html + `<div class="comment">${comment['comment']} - ${comment['name']}님</div>`
-  });
-  document.querySelector('#movie-review').innerHTML = temp_html
-}
