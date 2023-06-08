@@ -45,7 +45,7 @@ export const show_details = (id) => {
       let movieid_comment = JSON.parse(window.localStorage.getItem(`${id}_comment`))
       if (movieid_comment) {
         movieid_comment.forEach((comment) => {
-          temp_html = temp_html + `<div class="comment">${comment['comment']} - ${comment['name']}님<button onclick="comment_delete('${id}')" >삭제</div>`
+          temp_html = temp_html + `<div class="comment">${comment['comment']} - ${comment['name']}님</div>`
         });
       }
 
